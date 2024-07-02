@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 //currency-service.url=
 //currency-service.username=
 //currency-service.key=
-
+//TODO LKI
+//ConfigProperties sagt welcher Property Praefix,
+//Component erlaubt "@Autowired" in CurrencyConfigurationController
 @ConfigurationProperties(prefix = "currency-service")
 @Component
 public class CurrencyServiceConfiguration {

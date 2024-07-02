@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CurrencyConfigurationController {
 	
+	//TODO LKI injection from Spring @Component
 	@Autowired
 	private CurrencyServiceConfiguration configuration;
 	
+	//TODO LKI generell Mapping. @GetMapping is more precise
 	@RequestMapping("/currency-configuration")
 	public CurrencyServiceConfiguration retrieveAllCourses() {
 		return configuration;
