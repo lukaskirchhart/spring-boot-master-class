@@ -3,6 +3,7 @@
 		<title>Login -JSP</title>
 	</head>
 	<body>
-		login - JSP
+		login - JSP<br>
+		Hello ${name}
 	</body>
 </html>
