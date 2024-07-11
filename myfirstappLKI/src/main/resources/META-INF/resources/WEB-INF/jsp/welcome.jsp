@@ -3,7 +3,9 @@
 		<title>Welcome Page</title>
 	</head>
 	<body>
-		<div>Welcome</div>
-		<div>Your Name: ${name}</div>
+		<div class="container">
+			<h1>Welcome ${name}</h1>
+			<a href="list-todos">Manage Todos</a>
+		</div>
 	</body>
 </html>
