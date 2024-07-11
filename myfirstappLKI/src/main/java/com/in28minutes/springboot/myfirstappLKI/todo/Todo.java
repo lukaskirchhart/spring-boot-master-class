@@ -2,13 +2,17 @@ package com.in28minutes.springboot.myfirstappLKI.todo;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Size;
+
 //Database MySql
 //static List of todos
 public class Todo {
 
 	private int id;
 	private String username;
+	@Size(min = 10, message = "Enter at least 10 characters")
 	private String description;
+
 	private LocalDate targetDate;
 	private boolean done;
 
