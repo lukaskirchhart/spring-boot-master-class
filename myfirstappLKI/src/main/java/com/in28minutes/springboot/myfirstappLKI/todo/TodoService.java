@@ -21,7 +21,7 @@ public class TodoService {
 	}
 
 	public List<Todo> findByUserName(String userName) {
-		return todos;
+		return todos.stream().filter(t -> t.getUsername().equals(userName)).toList();
 	}
 
 	public void addTodo(String name, String description, LocalDate targetData, boolean done) {

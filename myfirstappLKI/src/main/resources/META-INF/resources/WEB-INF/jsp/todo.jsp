@@ -20,6 +20,7 @@
 		 
 		 
 		<!-- vervollstaendige TODO, damit es keine NPE gibt -->
+		<form:input type="hidden" path="username"/>
 		<form:input type="hidden" path="done"/>
 		<form:input type="hidden" path="id"/>
 		<input type="submit" class="btn btn-success"/>
