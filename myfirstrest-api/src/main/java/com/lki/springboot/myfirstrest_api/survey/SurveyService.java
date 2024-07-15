@@ -1,5 +1,7 @@
 package com.lki.springboot.myfirstrest_api.survey;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -50,5 +52,45 @@ public class SurveyService {
 			questionById = questions.stream().filter(q -> q.getId().equalsIgnoreCase(questionId)).findFirst();
 		}
 		return questionById;
+	}
+
+	public Optional<String> addNewSurveyQuestion(String surveyId, Question question) {
+		Optional<Survey> surveyById = retrieveSurveyById(surveyId);
+		if (surveyById.isPresent()) {
+			String randomId = generateRandomQuestionId();
+			question.setId(randomId);
+			List<Question> questions = surveyById.get().getQuestions();
+			questions.add(question);
+			return Optional.of(randomId);
+		} else {
+			return Optional.empty();
+		}
+	}
+
+	private String generateRandomQuestionId() {
+		SecureRandom secureRando = new SecureRandom();
+		BigInteger bigInteger = new BigInteger(32, secureRando);
+		String randomId = bigInteger.toString();
+		return randomId;
+	}
+
+	public String deleteQuestion(String surveyId, String questionId) {
+		String id = null;
+		Optional<Question> specificSurveyQuestion = retrieveSpecificSurveyQuestion(surveyId, questionId);
+		if (specificSurveyQuestion.isPresent()) {
+			Survey survey = retrieveSurveyById(surveyId).get();
+			boolean remove = survey.getQuestions().remove(specificSurveyQuestion.get());
+			if (remove) {
+				id = questionId;
+			}
+		}
+		return id;
+
+	}
+
+	public void updateSpecificSurveyQuestion(String surveyId, Question question) {
+		List<Question> allQuestionsFromSurvey = retrieveAllQuestionsFromSurvey(surveyId);
+		allQuestionsFromSurvey.removeIf(q -> q.getId().equalsIgnoreCase(question.getId()));
+		allQuestionsFromSurvey.add(question);
 	}
 }
