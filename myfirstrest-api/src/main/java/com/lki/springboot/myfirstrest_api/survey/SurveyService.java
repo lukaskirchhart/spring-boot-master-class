@@ -2,6 +2,7 @@ package com.lki.springboot.myfirstrest_api.survey;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,8 +32,23 @@ public class SurveyService {
 		return surveys;
 	}
 
-	public Survey retrieveSurveyById(String name) {
+	public Optional<Survey> retrieveSurveyById(String name) {
 		Optional<Survey> optional = surveys.stream().filter(s -> s.getId().equals(name)).findAny();
-		return optional.isPresent() ? optional.get() : null;
+		return optional;
+	}
+
+	public List<Question> retrieveAllQuestionsFromSurvey(String name) {
+		Optional<Survey> surveyById = retrieveSurveyById(name);
+		return surveyById.isPresent() ? surveyById.get().getQuestions() : Collections.emptyList();
+	}
+
+	public Optional<Question> retrieveSpecificSurveyQuestion(String surveyId, String questionId) {
+		Optional<Question> questionById = Optional.empty();
+		Optional<Survey> surveyById = retrieveSurveyById(surveyId);
+		if (surveyById.isPresent()) {
+			List<Question> questions = surveyById.get().getQuestions();
+			questionById = questions.stream().filter(q -> q.getId().equalsIgnoreCase(questionId)).findFirst();
+		}
+		return questionById;
 	}
 }
