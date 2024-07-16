@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -21,14 +22,11 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.lki.myfirstrestapi.survey.Question;
-import com.lki.myfirstrestapi.survey.SurveyResource;
-import com.lki.myfirstrestapi.survey.SurveyService;
-
 /**
  * This tests test only one Controller + a mocked Service
  */
 @WebMvcTest(controllers = SurveyResource.class)
+@AutoConfigureMockMvc(addFilters = false) // disable authentification
 public class SurveyResourceTest {
 
 	@MockBean
