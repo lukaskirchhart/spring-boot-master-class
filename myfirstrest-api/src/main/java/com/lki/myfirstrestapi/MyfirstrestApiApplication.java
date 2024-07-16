@@ -1,4 +1,4 @@
-package com.lki.springboot.myfirstrest_api;
+package com.lki.myfirstrestapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

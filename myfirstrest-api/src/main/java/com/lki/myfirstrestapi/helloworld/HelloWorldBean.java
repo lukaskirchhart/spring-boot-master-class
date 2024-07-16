@@ -1,4 +1,4 @@
-package com.lki.springboot.myfirstrest_api.helloworld;
+package com.lki.myfirstrestapi.helloworld;
 
 public class HelloWorldBean {
 

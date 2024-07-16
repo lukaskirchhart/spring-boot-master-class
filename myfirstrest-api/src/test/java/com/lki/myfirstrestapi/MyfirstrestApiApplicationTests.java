@@ -1,4 +1,4 @@
-package com.lki.springboot.myfirstrest_api;
+package com.lki.myfirstrestapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

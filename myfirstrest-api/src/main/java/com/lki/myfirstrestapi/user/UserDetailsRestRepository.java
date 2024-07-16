@@ -1,4 +1,4 @@
-package com.lki.springboot.myfirstrest_api.user;
+package com.lki.myfirstrestapi.user;
 
 import java.util.List;
 

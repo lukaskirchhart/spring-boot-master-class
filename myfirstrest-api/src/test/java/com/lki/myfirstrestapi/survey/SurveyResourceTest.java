@@ -1,4 +1,4 @@
-package com.lki.springboot.myfirstrest_api.survey;
+package com.lki.myfirstrestapi.survey;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -20,6 +20,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.lki.myfirstrestapi.survey.Question;
+import com.lki.myfirstrestapi.survey.SurveyResource;
+import com.lki.myfirstrestapi.survey.SurveyService;
 
 /**
  * This tests test only one Controller + a mocked Service

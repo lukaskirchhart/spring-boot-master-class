@@ -1,4 +1,4 @@
-package com.lki.springboot.myfirstrest_api.survey;
+package com.lki.myfirstrestapi.survey;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

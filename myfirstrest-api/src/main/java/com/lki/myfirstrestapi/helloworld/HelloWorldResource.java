@@ -1,4 +1,4 @@
-package com.lki.springboot.myfirstrest_api.helloworld;
+package com.lki.myfirstrestapi.helloworld;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

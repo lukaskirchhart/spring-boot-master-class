@@ -1,4 +1,4 @@
-package com.lki.springboot.myfirstrest_api.survey;
+package com.lki.myfirstrestapi.survey;
 
 import org.json.JSONException;
 import org.junit.jupiter.api.Test;
